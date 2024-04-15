@@ -2,4 +2,18 @@
 
 ![image](https://github.com/Zhu-1998/celldevelopment/blob/main/Graph.jpg)
 
-Advances in single-cell technology enable transcriptome data at unprecedented scales. However, identifying the driving force of cell function from these data remains challenging. We address this by learning cell state vector fields of cell differentiation/reprogramming from single-cell RNA velocity to quantify the global driving forces as landscape and flux. Our findings show that stem/progenitor cells necessitate greater energy dissipation for rapid cell cycles and self-renewal, maintaining pluripotency. We predict optimal developmental pathways and uncover the nucleation mechanism of cell state phase transitions with transition states as nucleation sites and pioneer genes as nucleation seeds. Loop flux allows quantification of each cycle flux's contribution to cell state transition dynamics, offering optimized bio-functions. We infer cell-cell interactions and cell-type-specific gene regulatory networks from single-cell data, predicting the effects of genetic perturbations on cell fate decisions. Essentially, our methodology utilizes single-cell high-throughput experiments for validating the Waddington landscape and flux theory, with associated quantifications. This provides a novel framework for uncovering underlying physical principles of cellular differentiation/reprogramming and broader biological processes.
+# Analysis tutorials
+## 1. Downloading and processing the single-cell transcriptomic data
+The scRNA-seq raw data can be downloaded from GEO with an accession number.  
+
+## 2. Estimating RNA velocity from scRNA-seq data
+For the scRNA-seq for ~1k U2OS-FUCCI data, we can estimate the RNA velocity by [scvelo](https://github.com/theislab/scvelo) or [dynamo](https://github.com/aristoteleo/dynamo-release). 
+
+For the scEU-seq data for ~3k RPE1-FUCCI cells, `dyn.sample_data.scEU_seq_rpe1()` to acquire the processed data, which includes cell cycle clustering and RNA velocity.
+
+
+## 3. Reconstructing vector field of cell cycle dynamics
+We can reconstruct the vector field based RNA velocity with `dyn.vf.VectorField()` by using [dynamo](https://github.com/aristoteleo/dynamo-release). Then, we can calculate the divergence, curl, acceleration and curvature to perform the differential geometry analysis. We can also calculate the jacobian to perform genetic perturbation and inference gene regulatory interaction.
+
+## 4. Quantifying landscape-flux of cell cycle global dynamics and thermodynamics
+We can learn an analytical function of vector field from sparse single cell samples on the entire space robustly by `vector_field_function`. Then, we could simulate stochastic dynamics by solving the Langevin equation based analytical function and quantify the non-equilibrium landscape-flux of the cell cycle.
