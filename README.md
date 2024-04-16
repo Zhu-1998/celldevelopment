@@ -25,4 +25,4 @@ On the other hand, if you model the system with stochastic differential equation
 /toggle` to generate the steady-state probability distribution data `landscape.txt`, then run `toggle_landscape_path.m` to plot the global dynamics landscape and paths.
 
 ## 5. Loop flux decomposition
-You can use Dynamo to calculate the least action path time with `dyn.pd.least_action` between different cell-type transitions, the transition rate between any two cell-type transitions is the reciprocal of time. Then, and then 
+You can use [Dynamo](https://github.com/aristoteleo/dynamo-release) to calculate the least action path time with `dyn.pd.least_action` between different cell-type transitions, the transition rate between any two cell-type transitions is the reciprocal of time. Then, one can run `loop_flux.m` to decompose the loop fluxes, which connect different cell states.
