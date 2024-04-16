@@ -18,7 +18,9 @@ following the protocol under the default parameters.
 You can reconstruct the vector field from RNA velocity with `dyn.vf.VectorField()` by using [Dynamo](https://github.com/aristoteleo/dynamo-release). Then, the differential geometry (divergence, curl, acceleration, curvature, jacobian) could be analyzed based on the reconstructed vector field. You can also learn an analytical function of vector field from sparse single-cell samples on the entire space robustly by `vector_field_function` function in [Dynamo](https://github.com/aristoteleo/dynamo-release).
 
 ## 4. Quantifying landscape-flux of global dynamics and thermodynamics
-Then, we could simulate stochastic dynamics by solving the Langevin equation based on the analytical function and quantify the non-equilibrium landscape-flux of the cell cycle.
+You could simulate stochastic dynamics by solving the Langevin equation based on the analytical function to get the steay-state probability disturbation and quantify the non-equilibrium landscape and flux. 
+For example, one can run `mouse_landscape_multi.py` in `./landscape-flux/mouse_retina` to generate the steay-state probability disturbation of mouse retina development dynamics. The step can output grid data (`Xgrid.csv`, `Ygrid.csv`), probability distribution data (`p_tra.csv`) and stochastic force distribution data (`mean_Fx.csv`, `mean_Fy.csv`). Then, `plot_landscape_path.m` in `./landscape-flux` can be runed to plot the landscape and least action path.
+On the other hand, if you modeling the system with differential equations
 
 ## 5. Loop flux decomposition
 You can use Dynamo to calculate the transition rate between any two cell-type transitions, and then 
