@@ -15,12 +15,14 @@ of cells in a controllable way will be a better measurement for RNA velocity and
 following the protocol under the default parameters.
 
 ## 3. Reconstructing the dynamical vector field from RNA velocity
-You can reconstruct the vector field from RNA velocity with `dyn.vf.VectorField()` by using [Dynamo](https://github.com/aristoteleo/dynamo-release). Then, the differential geometry (divergence, curl, acceleration, curvature, jacobian) could be analyzed based on the reconstructed vector field. You can also learn an analytical function of vector field from sparse single-cell samples on the entire space robustly by `vector_field_function` function in [Dynamo](https://github.com/aristoteleo/dynamo-release).
+You can reconstruct the vector field from RNA velocity with `dyn.vf.VectorField` by using [Dynamo](https://github.com/aristoteleo/dynamo-release). Then, the differential geometry (divergence, curl, acceleration, curvature, jacobian) could be analyzed based on the reconstructed vector field. You can also learn an analytical function of vector field from sparse single-cell samples on the entire space robustly by `vector_field_function` function in [Dynamo](https://github.com/aristoteleo/dynamo-release).
 
 ## 4. Quantifying landscape-flux of global dynamics and thermodynamics
-You could simulate stochastic dynamics by solving the Langevin equation based on the analytical function to get the steay-state probability disturbation and quantify the non-equilibrium landscape and flux. 
-For example, one can run `mouse_landscape_multi.py` in `./landscape-flux/mouse_retina` to generate the steay-state probability disturbation of mouse retina development dynamics. The step can output grid data (`Xgrid.csv`, `Ygrid.csv`), probability distribution data (`p_tra.csv`) and stochastic force distribution data (`mean_Fx.csv`, `mean_Fy.csv`). Then, `plot_landscape_path.m` in `./landscape-flux` can be runed to plot the landscape and least action path.
-On the other hand, if you modeling the system with differential equations
+You could simulate stochastic dynamics by solving the Langevin equation based on the analytical function to get the steady-state probability distribution and quantify the non-equilibrium landscape and flux. 
+For example, one can run `mouse_landscape_multi.py` in `./landscape-flux/mouse_retina` to generate the steady-state probability distribution of mouse retina development dynamics. The step can output grid data (`Xgrid.csv`, `Ygrid.csv`), probability distribution data (`p_tra.csv`), and stochastic force distribution data (`mean_Fx.csv`, `mean_Fy.csv`). Then, `plot_landscape_path.m` in `./landscape-flux` can be run to plot the landscape and least action path.
+
+On the other hand, if you model the system with stochastic differential equations, you can run C++ following `toggle.c` in `./landscape-flux
+/toggle` to generate the steady-state probability distribution data `landscape.txt`, then run `toggle_landscape_path.m` to plot the global dynamics landscape and paths.
 
 ## 5. Loop flux decomposition
-You can use Dynamo to calculate the transition rate between any two cell-type transitions, and then 
+You can use Dynamo to calculate the least action path time with `dyn.pd.least_action` between different cell-type transitions, the transition rate between any two cell-type transitions is the reciprocal of time. Then, and then 
