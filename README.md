@@ -14,8 +14,11 @@ However, the conventional RNA velocity relies on the mispriming of intron reads 
 of cells in a controllable way will be a better measurement for RNA velocity and transcriptomic dynamics. [Dynast](https://github.com/aristoteleo/dynast-release) toolkit can be used for analyzing labeling datasets and quantifying new RNA counts and old RNA counts. Then [Dynamo](https://github.com/aristoteleo/dynamo-release) package can estimate the absolute RNA velocity
 following the protocol under the default parameters.
 
-## 3. Reconstructing vector field of cell cycle dynamics
-We can reconstruct the vector field based on RNA velocity with `dyn.vf.VectorField()` by using [dynamo](https://github.com/aristoteleo/dynamo-release). Then, we can calculate the divergence, curl, acceleration and curvature to perform the differential geometry analysis. We can also calculate the jacobian to perform genetic perturbation and inference gene regulatory interaction.
+## 3. Reconstructing the dynamical vector field from RNA velocity
+You can reconstruct the vector field from RNA velocity with `dyn.vf.VectorField()` by using [Dynamo](https://github.com/aristoteleo/dynamo-release). Then, the differential geometry (divergence, curl, acceleration, curvature, jacobian) could be analyzed based on the reconstructed vector field. You can also learn an analytical function of vector field from sparse single-cell samples on the entire space robustly by `vector_field_function` function in [Dynamo](https://github.com/aristoteleo/dynamo-release).
 
-## 4. Quantifying landscape-flux of cell cycle global dynamics and thermodynamics
-We can learn an analytical function of vector field from sparse single cell samples on the entire space robustly by `vector_field_function`. Then, we could simulate stochastic dynamics by solving the Langevin equation based analytical function and quantify the non-equilibrium landscape-flux of the cell cycle.
+## 4. Quantifying landscape-flux of global dynamics and thermodynamics
+Then, we could simulate stochastic dynamics by solving the Langevin equation based on the analytical function and quantify the non-equilibrium landscape-flux of the cell cycle.
+
+## 5. Loop flux decomposition
+You can use Dynamo to calculate the transition rate between any two cell-type transitions, and then 
