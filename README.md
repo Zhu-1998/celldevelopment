@@ -26,4 +26,4 @@ One can use [Dynamo](https://github.com/aristoteleo/dynamo-release) to calculate
 
 
 ### Note: 
-One can reproduce the results by running `.ipynb` files in `./notebook`, please note that the figure number may be inconsistent with the officially published article. Of course, users can also load user-defined data for analysis.
+One can reproduce the results by running `.ipynb` files in `./notebook`, please note that the name of the notebook file may be inconsistent with the officially published article. Of course, users can also load user-defined data for analysis following the tutorials.
