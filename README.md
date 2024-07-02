@@ -23,3 +23,6 @@ On the other hand, if one model the system with stochastic differential equation
 
 ## 5. Loop flux decomposition
 One can use [Dynamo](https://github.com/aristoteleo/dynamo-release) to calculate the least action path time $t_{ij}$ with `dyn.pd.least_action` between different cell-type transitions ($i \neq j$), the transition rate $P_{ij}$ between any two different cell-type transitions ($i \neq j$) is the reciprocal of time, $P_{ij}=1/t_{ij}$. And the transition rate $P_{ii}$ between self cell-type transitions, $$P_{ii}=1-\sum_{j=1}^n P_{ij},  j \neq i.$$ Hence, one could calculate the transitions matrix, which satisfies that the sum of each row or column is equal to 1. Then, the transitions matrix can be used to run `loop_flux.m` to decompose the loop fluxes, which connect different cell states. Of course, one could adopt other appropriate toolkits to calculate the transition matrix according to different biological backgrounds, for example, [Scvelo](https://github.com/theislab/scvelo), [Cellrank](https://github.com/dpeerlab/cellrank), etc.
+
+### Note: 
+One can reproduce the results by running `.inpy` in `./notebook`, please note that the figure number may be inconsistent with the officially published article. Of course, users can also load user-defined data for analysis.
