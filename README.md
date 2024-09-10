@@ -29,4 +29,4 @@ One can use [Dynamo](https://github.com/aristoteleo/dynamo-release) to calculate
 One can reproduce the results by running `.ipynb` files in `./notebook`, please note that the name of the notebook file may be inconsistent with the officially published article. Of course, users can also load user-defined data for analysis following the tutorials.
 
 ## Cite:
-Zhu L, Yang S, Zhang K, Wang H, Fang X, Wang J. Uncovering underlying physical principles and driving forces of cell differentiation and reprogramming from single-cell transcriptomics. Proc Natl Acad Sci U S A. 2024 Aug 20;121(34):e2401540121. doi: 10.1073/pnas.2401540121.
+Zhu L, Yang S, Zhang K, Wang H, Fang X, Wang J. Uncovering underlying physical principles and driving forces of cell differentiation and reprogramming from single-cell transcriptomics. Proc Natl Acad Sci U S A. 2024 Aug 20;121(34):e2401540121. doi: [10.1073/pnas.2401540121](https://doi.org/10.1073/pnas.2401540121).
